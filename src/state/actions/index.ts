@@ -1,10 +1,18 @@
-import { ActionType } from '../action-types';
+/*
+This file basically defines interfaces for action-creators.
+It has nothing to do with being action itself
+*/ 
 
+
+import { ActionType } from '../action-types';
+import { CellTypes } from '../cell';
+
+export type Direction = 'up' | 'down';
 export interface MoveCellAction {
   type: ActionType.MOVE_CELL;
   payload: {
     id: string;
-    direction: 'up' | 'down';
+    direction: Direction;
   };
 }
 
@@ -17,7 +25,7 @@ export interface InsertCellBeforeAction {
   type: ActionType.INSERT_CELL_BEFORE;
   payload: {
     id: string;
-    type: 'code' | 'text';
+    type: CellTypes;
   };
 }
 

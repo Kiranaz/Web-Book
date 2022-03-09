@@ -24,6 +24,18 @@ const reducer = (
 ): CellsState => {
   switch (action.type) {
     case ActionType.UPDATE_CELL:
+      const { id, content } = action.payload;
+
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          [id]: {
+            ...state.data[id],
+            content,
+          },
+        },
+      }
       return state;
     case ActionType.DELETE_CELL:
       return state;
