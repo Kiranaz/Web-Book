@@ -51,7 +51,7 @@ export const fetchPlugin = (inputCode: string) => {
 
       build.onLoad({ filter: /.*/ }, async (args: any) => {
         const { data, request } = await axios.get(args.path);
-        console.log(request,'request')
+
         const result: esbuild.OnLoadResult = {
           loader: 'jsx',
           contents: data,
